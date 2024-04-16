@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 local Window = OrionLib:MakeWindow({Name = "CorxHub", HidePremium = false, SaveConfig = true, ConfigFolder = "CorxKey", IntroText = "Corx Hub Key System"})
 local Tab = Window:MakeTab({
     Name = "Key System",
@@ -21,7 +21,7 @@ OrionLib:MakeNotification({
 
 _G.PActivateKey = "#Perm-AKmc3951sad9024"
 _G.PActivateInput = "string"
-_G.PActivateRKey = "null"
+_G.PActivateRKey = "string"
 
 function RandomK()
     local s = ""
@@ -36,13 +36,19 @@ function RandomK()
 end
 
 function AutoKeyRandomizer()
-    local timer = 24 * 60 * 60 * 1000
     while true do
-        wait(timer)
+        -- Gera uma nova chave aleatória
         _G.PActivateRKey = RandomK()
+        wait(24 * 60 * 60)
+        OrionLib:MakeNotification({
+            Name = "Key System!",
+            Content = "Sua Key Expirou",
+            Image = "rbxassetid://7733965118",
+            Time = 5
+        })
     end
 end
-  
+spawn(AutoKeyRandomizer)
 Tab:AddTextbox({
     Name = "Chave de Ativação",
     Default = "",
