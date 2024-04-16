@@ -1,14 +1,14 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Corx Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Corx Hub", IntroText = "Corx Hub Loading...", IntroIcon = "rbxassetid://17165070203"})
-local Tab = Window:MakeTab({
+local Discord = Window:MakeTab({
 	Name = "Discord",
 	Icon = "rbxassetid://7733964719",
 	PremiumOnly = false
 })
-local Section = Tab:AddSection({
+local Discord = Tab:AddSection({
 	Name = "Copy Discord Invite Link"
 })
-Tab:AddButton({
+Discord:AddButton({
     Name = "Copy Discord Invite",
     Callback = function()
         local discordInvite = "https://discord.gg/hWT29VhuKR"
@@ -16,8 +16,8 @@ Tab:AddButton({
     end
 })
 local Tab = Window:MakeTab({
-	Name = "Discord",
-	Icon = "rbxassetid://7733964719",
+	Name = "Main",
+	Icon = "rbxassetid://7733960981",
 	PremiumOnly = false
 })
 
