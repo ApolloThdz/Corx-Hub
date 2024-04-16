@@ -74,14 +74,3 @@ Tab:AddButton({
         end
     end
 })
-
-local httpHook;
-httpHook = hookfunction(game.HttpGet, function(self,...)
-   local Args = {...}
-   if Args[1] and type(Args[1]) == "string" then
-       if Args[1]:match("checkPremium.php") then
-           return "true"
-       end
-   end
-   return httpHook(self,...)
-end)
