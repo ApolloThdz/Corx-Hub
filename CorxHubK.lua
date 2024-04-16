@@ -1,23 +1,23 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "CorxHub", HidePremium = false, SaveConfig = true, ConfigFolder = "CorxKey", IntroText = "Corx Hub Key System"})
 local Tab = Window:MakeTab({
-	Name = "Key System",
-	Icon = "rbxassetid://7733965118",
-	PremiumOnly = false
+    Name = "Key System",
+    Icon = "rbxassetid://7733965118",
+    PremiumOnly = false
 })
 local player = game:GetService("Players").LocalPlayer
 OrionLib:MakeNotification({
-	Name = "Key System!",
-	Content = "Opa tudo bem, " .. player.Name .. ", Bem vindo ao Corx Hub",
-	Image = "rbxassetid://7733965118",
-	Time = 5
+    Name = "Key System!",
+    Content = "Opa tudo bem, " .. player.Name .. ", Bem vindo ao Corx Hub",
+    Image = "rbxassetid://7733965118",
+    Time = 5
 })
 OrionLib:MakeNotification({
-	Name = "Key System!",
-	Content = "Por favor, " .. player.Name .. ", Insira a Chave de Ativação.",
-	Image = "rbxassetid://7733965118",
-	Time = 5
-}
+    Name = "Key System!",
+    Content = "Por favor, " .. player.Name .. ", Insira a Chave de Ativação.",
+    Image = "rbxassetid://7733965118",
+    Time = 5
+})
 
 _G.PActivateKey = "#Perm-AKmc3951sad9024"
 _G.PActivateInput = "string"
@@ -48,27 +48,28 @@ Tab:AddTextbox({
     Default = "",
     TextDisappear = true,
     Callback = function(Value)
-    _G.PActivateInput = Value
-)
+        _G.PActivateInput = Value
+    end
+})
 
 Tab:AddButton({
-	Name = "Verify Key",
-	Callback = function()
+    Name = "Verify Key",
+    Callback = function()
         if _G.PActivateInput == _G.PActivateKey then
             print("Chave Correta. Ativando Script Hub")
             OrionLib:MakeNotification({
-	          Name = "Key System!",
-	          Content = "Chave de Ativação Correta Executando o Script!!",
-	          Image = "rbxassetid://7733965118",
-	          Time = 5
+                Name = "Key System!",
+                Content = "Chave de Ativação Correta Executando o Script!!",
+                Image = "rbxassetid://7733965118",
+                Time = 5
             })
             loadstring(game:HttpGet(('https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/CorxHub.lua')))()
         else
             OrionLib:MakeNotification({
-	          Name = "Key System!",
-	          Content = "Chave de Ativação Incorreta!",
-	          Image = "rbxassetid://7733965118",
-	          Time = 5
+                Name = "Key System!",
+                Content = "Chave de Ativação Incorreta!",
+                Image = "rbxassetid://7733965118",
+                Time = 5
             })
             print("Chave Incorreta!")
         end
