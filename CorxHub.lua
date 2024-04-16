@@ -9,10 +9,16 @@ local Section = Tab:AddSection({
 	Name = "Copy Discord Invite Link"
 })
 Tab:AddButton({
-	Name = "Copy Discord Invite",
-	Callback = function()
-             setClipboardContent("https://discord.gg/hWT29VhuKR")
-  	end    
+    Name = "Copy Discord Invite",
+    Callback = function()
+        local discordInvite = "https://discord.gg/hWT29VhuKR"
+        setclipboard(discordInvite)
+    end
+})
+local Tab = Window:MakeTab({
+	Name = "Discord",
+	Icon = "rbxassetid://7733964719",
+	PremiumOnly = false
 })
 
 
