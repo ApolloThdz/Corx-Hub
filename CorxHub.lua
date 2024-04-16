@@ -15,10 +15,14 @@ Discord:AddButton({
         setclipboard(discordInvite)
     end
 })
-local Tab = Window:MakeTab({
+local Main = Window:MakeTab({
 	Name = "Main",
 	Icon = "rbxassetid://7733960981",
 	PremiumOnly = false
+})
+
+local Main = Tab:AddSection({
+	Name = "Auto Raid"
 })
 
 
