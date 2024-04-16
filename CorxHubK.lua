@@ -62,7 +62,7 @@ Tab:AddButton({
 	          Image = "rbxassetid://7733965118",
 	          Time = 5
             })
-            loadstring(game:HttpGet(('')))()
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/CorxHub.lua')))()
         else
             OrionLib:MakeNotification({
 	          Name = "Key System!",
