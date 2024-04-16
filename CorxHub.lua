@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/OrionLibS')))()
 local Window = OrionLib:MakeWindow({Name = "Corx Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Corx Hub", IntroText = "Corx Hub Loading...", IntroIcon = "rbxassetid://17165070203"})
 local Discord = Window:MakeTab({
 	Name = "Discord",
