@@ -2,20 +2,20 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "CorxHub", HidePremium = false, SaveConfig = true, ConfigFolder = "CorxKey", IntroText = "Corx Hub Key System"})
 local Tab = Window:MakeTab({
 	Name = "Key System",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://7733965118",
 	PremiumOnly = false
 })
 local player = game:GetService("Players").LocalPlayer
 OrionLib:MakeNotification({
 	Name = "Key System!",
 	Content = "Opa tudo bem, " .. player.Name .. ", Bem vindo ao Corx Hub",
-	Image = "rbxassetid://4483345998",
+	Image = "rbxassetid://7733965118",
 	Time = 5
 })
 OrionLib:MakeNotification({
 	Name = "Key System!",
 	Content = "Por favor, " .. player.Name .. ", Insira a Chave de Ativação.",
-	Image = "rbxassetid://4483345998",
+	Image = "rbxassetid://7733965118",
 	Time = 5
 }
 
@@ -59,7 +59,7 @@ Tab:AddButton({
             OrionLib:MakeNotification({
 	          Name = "Key System!",
 	          Content = "Chave de Ativação Correta Executando o Script!!",
-	          Image = "rbxassetid://4483345998",
+	          Image = "rbxassetid://7733965118",
 	          Time = 5
             })
             loadstring(game:HttpGet(('')))()
@@ -67,7 +67,7 @@ Tab:AddButton({
             OrionLib:MakeNotification({
 	          Name = "Key System!",
 	          Content = "Chave de Ativação Incorreta!",
-	          Image = "rbxassetid://4483345998",
+	          Image = "rbxassetid://7733965118",
 	          Time = 5
             })
             print("Chave Incorreta!")
