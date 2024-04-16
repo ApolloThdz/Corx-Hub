@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/OrionLibS'))()
 local Window = OrionLib:MakeWindow({Name = "CorxHub", HidePremium = false, SaveConfig = true, ConfigFolder = "CorxKey", IntroText = "Corx Hub Key System"})
 local Tab = Window:MakeTab({
     Name = "Key System",
