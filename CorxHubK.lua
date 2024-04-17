@@ -1,83 +1,48 @@
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/OrionLibS'))()
-local Window = OrionLib:MakeWindow({Name = "CorxHub", HidePremium = false, SaveConfig = true, ConfigFolder = "CorxKey", IntroText = "Corx Hub Key System"})
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Corx Hub",HidePremium = false,SaveConfig = true,ConfigFolder = "CorxHub",IntroText = "Key System"})
+
+_G.KeySystem = true
+_G.KeyInput = "strings"
+_G.KeyHub = "strings"
+_G.keyLength = 15
+
+local function generateRandomKey(length)
+    local key, characters = "", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    for i = 1, length do
+        local randomIndex = math.random(1, #characters)
+        key = key .. string.sub(characters, randomIndex, randomIndex)
+    end
+    return key
+end
+
+_G.KeyHub = generateRandomKey(_G.keyLength)
+
 local Tab = Window:MakeTab({
     Name = "Key System",
     Icon = "rbxassetid://7733965118",
     PremiumOnly = false
 })
-local player = game:GetService("Players").LocalPlayer
-OrionLib:MakeNotification({
-    Name = "Key System!",
-    Content = "Opa tudo bem, " .. player.Name .. ", Bem vindo ao Corx Hub",
-    Image = "rbxassetid://7733965118",
-    Time = 5
+local Section = Tab:AddSection({
+    Name = "Key System - - - C o r x H u b"
 })
-OrionLib:MakeNotification({
-    Name = "Key System!",
-    Content = "Por favor, " .. player.Name .. ", Insira a Chave de Ativação.",
-    Image = "rbxassetid://7733965118",
-    Time = 5
-})
-
-_G.PActivateKey = "#Perm-AKmc3951sad9024"
-_G.PActivateInput = "string"
-_G.PActivateRKey = "string"
-
-function RandomK()
-    local s = ""
-    for i = 1, 15 do
-        if math.random() > 0.5 then
-            s = s .. string.char(math.random(65, 90))
-        else
-            s = s .. string.char(math.random(97, 122))
-        end
-    end
-    return s
-end
-
-function AutoKeyRandomizer()
-    while true do
-        -- Gera uma nova chave aleatória
-        _G.PActivateRKey = RandomK()
-        wait(24 * 60 * 60)
-        OrionLib:MakeNotification({
-            Name = "Key System!",
-            Content = "Sua Key Expirou",
-            Image = "rbxassetid://7733965118",
-            Time = 5
-        })
-    end
-end
-spawn(AutoKeyRandomizer)
 Tab:AddTextbox({
-    Name = "Chave de Ativação",
-    Default = "",
+    Name = "Key Inputer",
+    Default = "Key Here",
     TextDisappear = true,
     Callback = function(Value)
-        _G.PActivateInput = Value
+        _G.KeyInput = Value
     end
 })
 
 Tab:AddButton({
-    Name = "Verify Key",
+    Name = "Check Key!",
     Callback = function()
-        if _G.PActivateInput == _G.PActivateKey then
-            print("Chave Correta. Ativando Script Hub")
-            OrionLib:MakeNotification({
-                Name = "Key System!",
-                Content = "Chave de Ativação Correta Executando o Script!!",
-                Image = "rbxassetid://7733965118",
-                Time = 5
-            })
-            loadstring(game:HttpGet(('https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/CorxHub.lua')))()
+        if _G.KeyInput == _G.KeyHub then
+            print("Key Correct")
         else
-            OrionLib:MakeNotification({
-                Name = "Key System!",
-                Content = "Chave de Ativação Incorreta!",
-                Image = "rbxassetid://7733965118",
-                Time = 5
-            })
-            print("Chave Incorreta!")
+            print("Incorrect Key")
         end
     end
 })
+
+print("Your Key Generated is:", _G.KeyHub)
