@@ -1,29 +1,28 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/OrionLibS')))()
-local Window = OrionLib:MakeWindow({Name = "Corx Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Corx Hub", IntroText = "Corx Hub Loading...", IntroIcon = "rbxassetid://17165070203"})
-local Discord = Window:MakeTab({
+local Window = OrionLib:MakeWindow({
+    Name = "Corx Hub",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "Corx Hub",
+    IntroText = "Corx Hub Loading...",
+    IntroIcon = "rbxassetid://17165070203"
+})
+
+local Tab = Window:MakeTab({
 	Name = "Discord",
-	Icon = "rbxassetid://7733964719",
-	PremiumOnly = false
-})
-local Discord = Tab:AddSection({
-	Name = "Copy Discord Invite Link"
-})
-Discord:AddButton({
-    Name = "Copy Discord Invite",
-    Callback = function()
-        local discordInvite = "https://discord.gg/hWT29VhuKR"
-        setclipboard(discordInvite)
-    end
-})
-local Main = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://7733960981",
+	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local Main = Tab:AddSection({
-	Name = "Auto Raid"
+Tab:AddButton({
+	Name = "Button!",
+	Callback = function()
+	        local discordInvite = "https://discord.gg/hWT29VhuKR"
+                setclipboard(discordInvite)
+      		print("button pressed")
+  	end    
 })
+
 
 
 
