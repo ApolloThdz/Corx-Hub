@@ -26,23 +26,32 @@ local Section = Tab:AddSection({
     Name = "Key System - - - C o r x H u b"
 })
 Tab:AddTextbox({
-    Name = "Key Inputer",
-    Default = "Key Here",
+    Name = "Key Input",
+    Default = "Enter Key Here",
     TextDisappear = true,
     Callback = function(Value)
         _G.KeyInput = Value
     end
 })
-
+function Notifyes()
+    OrionLib:MakeNotification({
+	Name = "Key System",
+	Content = "Your Key is Incorrect.",
+	Image = "rbxassetid://7733965118",
+	Time = 5
+})
+end
 Tab:AddButton({
-    Name = "Check Key!",
+    Name = "Check Key",
     Callback = function()
         if _G.KeyInput == _G.KeyHub then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ApolloThdz/Corx-Hub/main/CorxHub.lua"))()
             print("Key Correct")
         else
             print("Incorrect Key")
+            Notifyes()
         end
     end
 })
 
-print("Your Key Generated is:", _G.KeyHub)
+print("Your Generated Key is:", _G.KeyHub
